@@ -1,0 +1,6 @@
+country,platform,app_id,package,bundle,app_name,category,category_name,chart_rank,downloads,report_start,report_end
+US,android,,com.example.wallet,,Demo Wallet,Finance,Finance / Banking,10,42000,2026-01-01,2026-01-31
+US,android,,com.example.pay,,Demo Pay,Finance,Finance / Banking,25,18000,2026-01-01,2026-01-31
+US,android,,com.example.tools,,Demo Tools,Utilities,Utilities,40,9000,2026-01-01,2026-01-31
+US,ios,1000000001,,com.example.wallet.ios,Demo Wallet iOS,Finance,Finance / Banking,12,35000,2026-01-01,2026-01-31
+US,ios,1000000002,,com.example.game.ios,Demo Game iOS,Games,Games (Hyper-casual),80,6000,2026-01-01,2026-01-31

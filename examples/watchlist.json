@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "description": "Small public-app watchlist for local testing. Add your own targets as needed.",
+  "entries": [
+    {
+      "platform": "android",
+      "app_id": "",
+      "package": "com.spotify.music",
+      "bundle": "",
+      "app_name": "Spotify",
+      "category": "Music & Audio",
+      "countries": ["US", "GB"]
+    },
+    {
+      "platform": "ios",
+      "app_id": "324684580",
+      "package": "",
+      "bundle": "com.spotify.client",
+      "app_name": "Spotify",
+      "category": "Music",
+      "countries": ["US"]
+    }
+  ]
+}
