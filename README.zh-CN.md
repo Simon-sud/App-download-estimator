@@ -19,6 +19,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](requirements.txt)
 [![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill%20Ready-5B6EE1)](SKILL.md)
+[![AppsFlyer Workbench](https://img.shields.io/badge/AppsFlyer--API--Tools-UI%20集成-0A7BFF)](https://github.com/Simon-sud/AppsFlyer-API-Tools)
 [![Tests](https://img.shields.io/badge/tests-pytest-brightgreen)](tests/)
 
 <br/>
@@ -31,6 +32,8 @@
   <a href="#快速开始">快速开始</a>
   &nbsp;·&nbsp;
   <a href="#openclaw-skill">OpenClaw</a>
+  &nbsp;·&nbsp;
+  <a href="#appsflyer-工作台">AppsFlyer UI</a>
   &nbsp;·&nbsp;
   <a href="#模型">模型</a>
   &nbsp;·&nbsp;
@@ -57,6 +60,19 @@
 | **采集** | `rating_snapshot.py` — iOS（iTunes Lookup）+ Android（`google-play-scraper`） |
 | **流水线** | SQLite 快照、增速计算、基准导入、K 因子回测校准 |
 | **Agent** | JSON 标准输出 + [`SKILL.md`](SKILL.md) 适配 [OpenClaw](https://docs.openclaw.ai) |
+
+---
+
+## AppsFlyer 工作台
+
+本仓库是 [AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools) 中 **App Estimator** 模块对应的**独立开源引擎**。
+
+| 仓库 | 定位 |
+| --- | --- |
+| **[App-download-estimator](https://github.com/Simon-sud/App-download-estimator)**（本仓库） | CLI 脚本、SQLite 流水线、基准导入、OpenClaw `SKILL.md` |
+| **[AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools)** | 完整数据工作台 — `/app-estimator` 页面经 Go `:5001` 提供 UI，共用同一套估算模型 |
+
+需要 Agent / 脚本 / 无头自动化时用**本仓库**；需要嵌入 AppsFlyer 分析栈的 React 界面时用 **AppsFlyer-API-Tools**。
 
 ---
 

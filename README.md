@@ -19,6 +19,7 @@ Optional market-benchmark calibration · SQLite snapshot pipeline · **OpenClaw 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](requirements.txt)
 [![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill%20Ready-5B6EE1)](SKILL.md)
+[![AppsFlyer Workbench](https://img.shields.io/badge/AppsFlyer--API--Tools-UI%20Integration-0A7BFF)](https://github.com/Simon-sud/AppsFlyer-API-Tools)
 [![Tests](https://img.shields.io/badge/tests-pytest-brightgreen)](tests/)
 
 <br/>
@@ -31,6 +32,8 @@ Optional market-benchmark calibration · SQLite snapshot pipeline · **OpenClaw 
   <a href="#quick-start">Quick Start</a>
   &nbsp;·&nbsp;
   <a href="#openclaw-skill">OpenClaw</a>
+  &nbsp;·&nbsp;
+  <a href="#appsflyer-workbench">AppsFlyer UI</a>
   &nbsp;·&nbsp;
   <a href="#model">Model</a>
   &nbsp;·&nbsp;
@@ -57,6 +60,19 @@ This repository ships **no proprietary datasets**. Bring your own benchmarks whe
 | **Collect** | `rating_snapshot.py` — iOS (iTunes Lookup) + Android (`google-play-scraper`) |
 | **Pipeline** | SQLite snapshots, velocity, benchmark import, K calibration |
 | **Agents** | JSON stdout + [`SKILL.md`](SKILL.md) for [OpenClaw](https://docs.openclaw.ai) workflows |
+
+---
+
+## AppsFlyer workbench
+
+This repository is the **standalone open-source engine** behind the **App Estimator** module in [AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools).
+
+| Repo | Role |
+| --- | --- |
+| **[App-download-estimator](https://github.com/Simon-sud/App-download-estimator)** (this repo) | CLI scripts, SQLite pipeline, benchmarks import, OpenClaw `SKILL.md` |
+| **[AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools)** | Full data workbench — route `/app-estimator` UI talks to Go `:5001` and shares the same estimation model |
+
+Use **this repo** for agent skills, scripting, and headless automation. Use **AppsFlyer-API-Tools** when you need the React UI inside the broader AppsFlyer analytics stack.
 
 ---
 

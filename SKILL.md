@@ -83,7 +83,12 @@ python3 {baseDir}/scripts/run_daily_collect.py --watchlist {baseDir}/examples/wa
 - One final message per user request; no tool-progress chatter on messaging channels
 - Read [`references/k_matrix.md`](references/k_matrix.md) for coefficient semantics when explaining the model
 
+## Related project
+
+The same estimation model powers the **App Estimator** UI (`/app-estimator`) in [AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools). This skill repo is the standalone CLI + OpenClaw package; the workbench repo adds the React front end and Go API layer.
+
 ## Documentation
 
 - English: [`README.md`](README.md)
 - 中文: [`README.zh-CN.md`](README.zh-CN.md)
+- Workbench: [AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools)
