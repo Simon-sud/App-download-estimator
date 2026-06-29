@@ -1,6 +1,18 @@
+<div align="center">
+
 # Contributing
 
-Thanks for helping improve app-download-estimator.
+<p>
+  <a href="CONTRIBUTING.md"><strong>English</strong></a>
+  &nbsp;·&nbsp;
+  <a href="CONTRIBUTING.zh-CN.md">简体中文</a>
+</p>
+
+</div>
+
+---
+
+Thanks for helping improve **app-download-estimator**.
 
 ## Scope
 
@@ -19,6 +31,16 @@ python3 -m venv .venv
 ## Pull request checklist
 
 - [ ] Tests pass locally
-- [ ] README updated if CLI flags or data formats changed
+- [ ] README updated if CLI flags or data formats changed ([EN](README.md) / [中文](README.zh-CN.md))
 - [ ] No licensed third-party datasets included
 - [ ] Estimator output still includes the public disclaimer
+
+<div align="center">
+
+<p>
+  <a href="CONTRIBUTING.md"><strong>English</strong></a>
+  &nbsp;·&nbsp;
+  <a href="CONTRIBUTING.zh-CN.md">简体中文</a>
+</p>
+
+</div>
