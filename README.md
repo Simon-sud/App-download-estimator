@@ -29,6 +29,8 @@ Optional market-benchmark calibration · SQLite snapshot pipeline · **OpenClaw 
 </p>
 
 <p>
+  <a href="#overview">Overview</a>
+  &nbsp;·&nbsp;
   <a href="#quick-start">Quick Start</a>
   &nbsp;·&nbsp;
   <a href="#openclaw-skill">OpenClaw</a>
@@ -44,39 +46,54 @@ Optional market-benchmark calibration · SQLite snapshot pipeline · **OpenClaw 
 
 > **Disclaimer:** Heuristic estimates for research and planning only — not official App Store or Google Play download figures.
 
-</div>
+<br/>
 
 ---
 
-## Overview
+<h2 id="overview">Overview</h2>
 
-**app-download-estimator** is an open-source toolchain that estimates monthly and daily app downloads using **public rating counts and growth velocity**, with optional calibration from **your own licensed benchmark CSVs**.
+<p>
+<strong>app-download-estimator</strong> is an open-source toolchain that estimates monthly and daily app downloads using <strong>public rating counts and growth velocity</strong>, with optional calibration from <strong>your own licensed benchmark CSVs</strong>.
+</p>
 
-This repository ships **no proprietary datasets**. Bring your own benchmarks when you need waterline validation.
+<p>
+This repository ships <strong>no proprietary datasets</strong>. Bring your own benchmarks when you need waterline validation.
+</p>
 
 | Capability | Description |
-| --- | --- |
+| :---: | :---: |
 | **Estimate** | `estimate_downloads.py` — K-factor model with 30-day delta normalization |
 | **Collect** | `rating_snapshot.py` — iOS (iTunes Lookup) + Android (`google-play-scraper`) |
 | **Pipeline** | SQLite snapshots, velocity, benchmark import, K calibration |
 | **Agents** | JSON stdout + [`SKILL.md`](SKILL.md) for [OpenClaw](https://docs.openclaw.ai) workflows |
 
+<br/>
+
 ---
 
-## AppsFlyer workbench
+<h2 id="appsflyer-workbench">AppsFlyer workbench</h2>
 
-This repository is the **standalone open-source engine** behind the **App Estimator** module in [AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools).
+<p>
+This repository is the <strong>standalone open-source engine</strong> behind the <strong>App Estimator</strong> module in <a href="https://github.com/Simon-sud/AppsFlyer-API-Tools">AppsFlyer-API-Tools</a>.
+</p>
 
 | Repo | Role |
-| --- | --- |
+| :---: | :---: |
 | **[App-download-estimator](https://github.com/Simon-sud/App-download-estimator)** (this repo) | CLI scripts, SQLite pipeline, benchmarks import, OpenClaw `SKILL.md` |
 | **[AppsFlyer-API-Tools](https://github.com/Simon-sud/AppsFlyer-API-Tools)** | Full data workbench — route `/app-estimator` UI talks to Go `:5001` and shares the same estimation model |
 
-Use **this repo** for agent skills, scripting, and headless automation. Use **AppsFlyer-API-Tools** when you need the React UI inside the broader AppsFlyer analytics stack.
+<p>
+Use <strong>this repo</strong> for agent skills, scripting, and headless automation.<br/>
+Use <strong>AppsFlyer-API-Tools</strong> when you need the React UI inside the broader AppsFlyer analytics stack.
+</p>
+
+<br/>
 
 ---
 
-## Quick start
+<h2 id="quick-start">Quick start</h2>
+
+</div>
 
 ```bash
 git clone https://github.com/Simon-sud/App-download-estimator.git
@@ -93,17 +110,27 @@ bash scripts/setup_env.sh
   --benchmark-dir examples/benchmarks
 ```
 
-Or run the bundled example:
+<div align="center">
+
+<p>Or run the bundled example:</p>
+
+</div>
 
 ```bash
 bash examples/run_estimate.sh
 ```
 
+<div align="center">
+
+<br/>
+
 ---
 
-## OpenClaw skill
+<h2 id="openclaw-skill">OpenClaw skill</h2>
 
-Install as a workspace skill (copy or symlink the repo into your OpenClaw skills directory):
+<p>Install as a workspace skill (copy or symlink the repo into your OpenClaw skills directory):</p>
+
+</div>
 
 ```bash
 # Example: install into default OpenClaw workspace
@@ -111,13 +138,21 @@ mkdir -p ~/.openclaw/workspace/skills
 cp -R /path/to/App-download-estimator ~/.openclaw/workspace/skills/app-download-estimator
 ```
 
-The agent reads [`SKILL.md`](SKILL.md) for triggers, CLI usage, and reporting rules. Requires `python3` on the host.
+<div align="center">
 
-See [SKILL.md](SKILL.md) for full agent integration details.
+<p>
+The agent reads <a href="SKILL.md">SKILL.md</a> for triggers, CLI usage, and reporting rules. Requires <code>python3</code> on the host.
+</p>
+
+<p>See <a href="SKILL.md">SKILL.md</a> for full agent integration details.</p>
+
+<br/>
 
 ---
 
-## Project layout
+<h2 id="project-layout">Project layout</h2>
+
+</div>
 
 ```text
 App-download-estimator/
@@ -132,12 +167,20 @@ App-download-estimator/
 └── data/                    # SQLite DB & snapshots (local only)
 ```
 
+<div align="center">
+
+<br/>
+
 ---
 
-## Core commands
+<h2 id="core-commands">Core commands</h2>
+
+<p><strong>Estimate downloads</strong> · <strong>Snapshot collection</strong> · <strong>Database pipeline</strong></p>
+
+</div>
 
 <details>
-<summary><strong>Estimate downloads</strong></summary>
+<summary align="center"><strong>Estimate downloads</strong></summary>
 
 ```bash
 python3 scripts/estimate_downloads.py \
@@ -150,14 +193,18 @@ python3 scripts/estimate_downloads.py \
   --benchmark-dir benchmarks
 ```
 
+<div align="center">
+
 - `--delta-ratings` is normalized to a **30-day window** by default
 - Use `--snapshot-days 7` when your delta covers only 7 days
 - Without benchmarks, returns a pure formula estimate
 
+</div>
+
 </details>
 
 <details>
-<summary><strong>Snapshot collection</strong></summary>
+<summary align="center"><strong>Snapshot collection</strong></summary>
 
 ```bash
 python3 scripts/rating_snapshot.py \
@@ -168,7 +215,7 @@ python3 scripts/rating_snapshot.py \
 </details>
 
 <details>
-<summary><strong>Database pipeline</strong></summary>
+<summary align="center"><strong>Database pipeline</strong></summary>
 
 ```bash
 python3 scripts/init_db.py
@@ -179,40 +226,63 @@ python3 scripts/query_db.py stats
 
 </details>
 
+<div align="center">
+
+<br/>
+
 ---
 
-## Benchmark CSV formats
+<h2 id="benchmark-csv">Benchmark CSV formats</h2>
 
-**Simple format** (recommended):
+<p><strong>Simple format</strong> (recommended):</p>
+
+</div>
 
 ```csv
 country,platform,app_id,package,bundle,app_name,category,category_name,chart_rank,downloads,report_start,report_end
 US,android,,com.example.app,,Example,Finance,Finance / Banking,20,12000,2026-01-01,2026-01-31
 ```
 
-**Intelligence export format** — importer accepts vendor exports with an `App,App Name` header. **Only import files you are licensed to use.** Do not commit proprietary exports to public repos.
+<div align="center">
 
-Sample file: [`examples/benchmarks/US_finance.sample.csv`](examples/benchmarks/US_finance.sample.csv)
+<p>
+<strong>Intelligence export format</strong> — importer accepts vendor exports with an <code>App,App Name</code> header.<br/>
+<strong>Only import files you are licensed to use.</strong> Do not commit proprietary exports to public repos.
+</p>
+
+<p>Sample file: <a href="examples/benchmarks/US_finance.sample.csv">examples/benchmarks/US_finance.sample.csv</a></p>
+
+<br/>
 
 ---
 
-## Model
+<h2 id="model">Model</h2>
+
+</div>
 
 ```text
 monthly_downloads = delta_ratings_30d × K × maturity_beta × regional_factor
 ```
 
-When benchmark data is available, results may be capped by a **rank-aware category waterline** (`1.5 × waterline`).
+<div align="center">
 
-Coefficients: [`references/k_matrix.md`](references/k_matrix.md)
+<p>
+When benchmark data is available, results may be capped by a <strong>rank-aware category waterline</strong> (<code>1.5 × waterline</code>).
+</p>
+
+<p>Coefficients: <a href="references/k_matrix.md">references/k_matrix.md</a></p>
 
 | Variable | Purpose |
-| --- | --- |
+| :---: | :---: |
 | `APP_ESTIMATOR_BENCHMARKS_DIR` | Override default `./benchmarks` directory |
+
+<br/>
 
 ---
 
-## Testing
+<h2 id="testing">Testing</h2>
+
+</div>
 
 ```bash
 python3 -m venv .venv
@@ -220,29 +290,39 @@ python3 -m venv .venv
 .venv/bin/pytest -q
 ```
 
----
-
-## Agent workflow
-
-1. Collect or query `total_ratings` and `delta_ratings` (or use `query_db.py app-inputs`)
-2. Run `estimate_downloads.py`
-3. Present `est_monthly_downloads`, `confidence`, and `methodology` to the user
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
-
----
-
 <div align="center">
+
+<br/>
+
+---
+
+<h2 id="agent-workflow">Agent workflow</h2>
+
+<p>
+1. Collect or query <code>total_ratings</code> and <code>delta_ratings</code> (or use <code>query_db.py app-inputs</code>)<br/>
+2. Run <code>estimate_downloads.py</code><br/>
+3. Present <code>est_monthly_downloads</code>, <code>confidence</code>, and <code>methodology</code> to the user
+</p>
+
+<br/>
+
+---
+
+<h2 id="license">License</h2>
+
+<p>MIT — see <a href="LICENSE">LICENSE</a>.</p>
+
+<br/>
+
+---
 
 <br/>
 
 **Keep private in production**
 
+<p>
 Licensed intelligence exports · large paid-data watchlists · operational SQLite history
+</p>
 
 <br/>
 
